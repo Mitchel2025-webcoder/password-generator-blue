@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Generator | BroCodeX</title>
+    <meta name="description" content="Generate strong, random passwords with custom lengths and character options.">
+    <meta name="author" content="BroCodeX">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔐</text></svg>">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main>
+        <header>
+            <button type="button" id="theme-toggle">Dark mode</button>
+            <h1>Password Generator</h1>
+            <p>Create strong, random passwords in seconds. Pick a length, choose your characters, and copy.</p>
+        </header>
+        <section aria-label="Password output">
+            <label for="password">Generated password</label>
+            <input type="text" id="password" readonly placeholder="Click Generate">
+            <button id="copy-btn" type="button">Copy</button>
+            <label for="strength">Strength</label>
+            <meter id="strength" min="0" max="100" value="0"></meter>
+            <p id="copy-status" role="status"></p>
+        </section>
+        <form id="generator-form">
+            <label for="length">Password length</label>
+            <input type="range" id="length" min="8" max="32" value="16">
+            <output id="length-value" for="length">16</output>
+            <fieldset>
+                <legend>Include Characters</legend>
+                <label><input type="checkbox" name="uppercase" checked>Uppercase (A-Z)</label>
+                <label><input type="checkbox" name="lowercase" checked>Lowercase (a-z)</label>
+                <label><input type="checkbox" name="numbers" checked>Numbers (0-9)</label>
+                <label><input type="checkbox" name="symbols" checked>Symbols (!@#$)</label>
+            </fieldset>
+            <p role="alert" id="error" hidden>Select at least one character type.</p>
+            <button type="submit">Generate password</button>
+        </form>
+    </main>
+    <footer>
+        <p>Designed by &lt;BroCodeX/&gt;</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
